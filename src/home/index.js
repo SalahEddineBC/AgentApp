@@ -23,7 +23,6 @@ class Home extends Component {
 
   t = () => {
     socket.on('user-need-help', eventdata => {
-      console.warn('nrlk');
         this.props.navigation.navigate('Profile', {
             itemId: 86,
             latitude:eventdata.location.latitude,
@@ -35,11 +34,10 @@ class Home extends Component {
     header: null
   };
   render() {
-      this.t();
+    this.t();
     return (
-      <View style={styles.container} onTouchStart={() => {}}>
-        <Text style={styles.instructions}>To get h started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
+      <View style={styles.container} >
+        <Text style={styles.welcome}>Waiting for Receiving help requests</Text>
       </View>
     );
   }
